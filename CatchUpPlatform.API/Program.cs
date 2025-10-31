@@ -1,8 +1,8 @@
-using CatchUpPlatform.API.News.Application.Internal.CommandServices;
-using CatchUpPlatform.API.News.Application.Internal.QueryServices;
-using CatchUpPlatform.API.News.Domain.Repositories;
-using CatchUpPlatform.API.News.Domain.Services;
-using CatchUpPlatform.API.News.Infrastructure.Persistence.EFC.Repositories;
+using CatchUpPlatform.API.CarManagement.Application.Internal.CommandServices;
+using CatchUpPlatform.API.CarManagement.Application.Internal.QueryServices;
+using CatchUpPlatform.API.CarManagement.Domain.Repositories;
+using CatchUpPlatform.API.CarManagement.Domain.Services;
+using CatchUpPlatform.API.CarManagement.Infrastructure.Persistence.EFC.Repositories;
 using CatchUpPlatform.API.Shared.Domain.Repositories;
 using CatchUpPlatform.API.Shared.Infrastructure.Interfaces.ASP.Configuration;
 using CatchUpPlatform.API.Shared.Infrastructure.Persistence.EFC.Configuration;
@@ -45,9 +45,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // News Bounded Context Injection Configuration
-builder.Services.AddScoped<IFavoriteSourceRepository, FavoriteSourceRepository>();
-builder.Services.AddScoped<IFavoriteSourceCommandService, FavoriteSourceCommandService>();
-builder.Services.AddScoped<IFavoriteSourceQueryService, FavoriteSourceQueryService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ICarCommandService, CarCommandService>();
+builder.Services.AddScoped<ICarQueryService, CarQueryService>();
 
 
 var app = builder.Build();

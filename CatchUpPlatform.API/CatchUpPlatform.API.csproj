@@ -16,10 +16,4 @@
         <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="News\Domain\Model\Entities\" />
-      <Folder Include="News\Domain\Model\Events\" />
-      <Folder Include="News\Domain\Model\ValueObjects\" />
-    </ItemGroup>
-
 </Project>
